@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Poke Client</string>
+
+    <string name="menu_fragment_label">Poke Client: Menu</string>
+    <string name="pokemon_search">Pokemon search</string>
+    <string name="random_pokemon">Random pokemon</string>
+    <string name="favorites_pokemon">Favorites pokemon</string>
 </resources>

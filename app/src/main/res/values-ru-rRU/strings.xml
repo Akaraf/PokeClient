@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Poke Client</string>
+    <string name="pokemon_search">Поиск покемона</string>
+    <string name="random_pokemon">Случайный покемон</string>
+    <string name="favorites_pokemon">Избранные покемоны</string>
+    <string name="menu_fragment_label">Poke Client: Меню</string>
+</resources>
