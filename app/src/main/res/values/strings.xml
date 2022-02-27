@@ -5,4 +5,8 @@
     <string name="pokemon_search">Pokemon search</string>
     <string name="random_pokemon">Random pokemon</string>
     <string name="favorites_pokemon">Favorites pokemon</string>
+
+    <string name="search_tooltip_text">Enter name of the Pokemon</string>
+    <string name="add_to_favorite">Add to favorite</string>
+    <string name="remove_from_favorite">Remove from favorite</string>
 </resources>
