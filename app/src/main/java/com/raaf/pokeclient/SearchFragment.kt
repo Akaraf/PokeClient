@@ -120,7 +120,6 @@ class SearchFragment : Fragment(), View.OnClickListener {
     }
 
     private fun fillPokemonUI(pokemon: Pokemon?) {
-        if (pokemon == null) return
         fillUI(
             searchedPokemonLayout,
             pokemonIV,
@@ -167,8 +166,8 @@ class SearchFragment : Fragment(), View.OnClickListener {
         favoriteStatusDisposable = searchVM.dao.checkItem(id)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribe { t ->
-                if (t != null) isPokemonInFavorite = t.isNotEmpty()
+            .subscribe { response ->
+                if (response != null) isPokemonInFavorite = response.isNotEmpty()
                 isAddingToFavorite(isPokemonInFavorite, favoriteTV)
             }
     }

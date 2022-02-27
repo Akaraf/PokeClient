@@ -8,4 +8,5 @@
     <string name="search_tooltip_text">Введите имя покемона</string>
     <string name="add_to_favorite">Добавить в избранное</string>
     <string name="remove_from_favorite">Удалить из избранного</string>
+    <string name="random_pokemon_fragment_label">Poke Client: Случайный покемон</string>
 </resources>

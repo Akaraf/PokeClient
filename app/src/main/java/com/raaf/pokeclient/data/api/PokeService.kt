@@ -32,7 +32,7 @@ interface PokeService {
     }
 
     @GET("pokemon/{id}/")
-    fun getPokemonById(@Path("id") id: Int): Single<Pokemon>
+    fun getPokemonById(@Path("id") id: Int): Observable<Pokemon>
 
     @GET("pokemon/{name}/")
     fun getPokemonByName(@Path("name") name: String): Observable<Pokemon>

@@ -41,7 +41,7 @@ class MenuFragment : Fragment(), View.OnClickListener {
                 findNavController().navigate(R.id.action_menuFragment_to_searchFragment)
             }
             randomButton -> {
-
+                findNavController().navigate(R.id.action_menuFragment_to_randomPokemonFragment)
             }
             favoritesButton -> {
 

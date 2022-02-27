@@ -18,8 +18,9 @@ fun fillUI(layout: CardView,
            id: TextView,
            characteristic: TextView,
            favorite: TextView,
-           pokemon: Pokemon
+           pokemon: Pokemon?
 ) {
+    if (pokemon == null) return
     Glide.with(image)
         .load(pokemon.sprites.other.home.front_default)
         .error(ColorDrawable(Color.GRAY))
