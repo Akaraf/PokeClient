@@ -17,7 +17,6 @@ interface PokeService {
 
         fun create() : PokeService {
             val okHttpClient = OkHttpClient.Builder()
-                .addInterceptor(PokeInterceptor())
                 .build()
 
             val retrofit = Retrofit.Builder()
