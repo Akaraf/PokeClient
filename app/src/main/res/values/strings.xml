@@ -10,4 +10,5 @@
     <string name="add_to_favorite">Add to favorite</string>
     <string name="remove_from_favorite">Remove from favorite</string>
     <string name="random_pokemon_fragment_label">Poke Client: Random Pokemon</string>
+    <string name="favorites_fragment_label">Poke Client: Favorites Pokemon</string>
 </resources>

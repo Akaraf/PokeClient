@@ -1,4 +1,4 @@
-package com.raaf.pokeclient.extensions
+package com.raaf.pokeclient.ui.extensions
 
 import android.content.Context
 import android.view.inputmethod.InputMethodManager

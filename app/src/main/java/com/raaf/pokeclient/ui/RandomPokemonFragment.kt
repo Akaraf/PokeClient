@@ -1,4 +1,4 @@
-package com.raaf.pokeclient
+package com.raaf.pokeclient.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,8 +9,12 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
+import com.raaf.pokeclient.App
+import com.raaf.pokeclient.R
 import com.raaf.pokeclient.data.dataModels.Pokemon
-import com.raaf.pokeclient.extensions.lazyViewModel
+import com.raaf.pokeclient.data.databases.extensions.addToFavorite
+import com.raaf.pokeclient.data.databases.extensions.removeFromFavorite
+import com.raaf.pokeclient.ui.extensions.lazyViewModel
 import com.raaf.pokeclient.utils.clearUI
 import com.raaf.pokeclient.utils.fillUI
 import com.raaf.pokeclient.utils.isAddingToFavorite
@@ -67,7 +71,8 @@ class RandomPokemonFragment : Fragment(), View.OnClickListener {
         makeRandomAction(randomVM.savedPokemon)
         makeRandomAction(currentPokemon)
         setTitle(requireActivity().findViewById(
-            R.id.toolbar),
+            R.id.toolbar
+        ),
             getString(R.string.menu_fragment_label)
         )
         observeRandomPokemon()
@@ -85,8 +90,8 @@ class RandomPokemonFragment : Fragment(), View.OnClickListener {
                 randomVM.getRandomPokemon()
             }
             favoriteTV -> {
-                if (isPokemonInFavorite) currentPokemon?.let { randomVM.removeFromFavorite(it) }
-                else currentPokemon?.let { randomVM.addToFavorite(it) }
+                if (isPokemonInFavorite) currentPokemon?.let { randomVM.dao.removeFromFavorite(it) }
+                else currentPokemon?.let { randomVM.dao.addToFavorite(it) }
                 isPokemonInFavorite = !isPokemonInFavorite
             }
         }

@@ -1,4 +1,4 @@
-package com.raaf.pokeclient
+package com.raaf.pokeclient.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.raaf.pokeclient.R
 import com.raaf.pokeclient.utils.setTitle
 
 class MenuFragment : Fragment(), View.OnClickListener {
@@ -44,7 +45,7 @@ class MenuFragment : Fragment(), View.OnClickListener {
                 findNavController().navigate(R.id.action_menuFragment_to_randomPokemonFragment)
             }
             favoritesButton -> {
-
+                findNavController().navigate(R.id.action_menuFragment_to_favoriteFragment)
             }
         }
     }

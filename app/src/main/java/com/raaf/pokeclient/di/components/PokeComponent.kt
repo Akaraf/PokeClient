@@ -4,6 +4,7 @@ import android.app.Application
 import com.raaf.pokeclient.di.modules.FavoritePokemonDatabaseModule
 import com.raaf.pokeclient.di.modules.PokeServiceModule
 import com.raaf.pokeclient.di.modules.RandomPokemonProviderModule
+import com.raaf.pokeclient.viewModels.FavoritesViewModel
 import com.raaf.pokeclient.viewModels.RandomPokemonViewModel
 import com.raaf.pokeclient.viewModels.SearchViewModel
 import dagger.BindsInstance
@@ -28,4 +29,5 @@ interface PokeComponent {
 
     fun searchViewModel() : SearchViewModel.Factory
     fun randomViewModel() : RandomPokemonViewModel.Factory
+    fun favoriteViewModel() : FavoritesViewModel.Factory
 }

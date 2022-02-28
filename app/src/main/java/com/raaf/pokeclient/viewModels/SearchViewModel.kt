@@ -48,22 +48,6 @@ class SearchViewModel @AssistedInject constructor(
         savedStateHandle.set(SEARCH_NAME_STATE, savedSearchName)
     }
 
-    fun addToFavorite(pokemon: Pokemon) {
-        Completable.fromAction {
-            favoriteDB.favoritePokemonDao().insert(pokemon)
-        }
-            .subscribeOn(Schedulers.io())
-            .subscribe({}, { onFailure(it)})
-    }
-
-    fun removeFromFavorite(pokemon: Pokemon) {
-        Completable.fromAction {
-            favoriteDB.favoritePokemonDao().delete(pokemon)
-        }
-            .subscribeOn(Schedulers.io())
-            .subscribe({}, { onFailure(it)})
-    }
-
     @AssistedFactory
     interface Factory {
         fun create(savedStateHandle: SavedStateHandle) : SearchViewModel

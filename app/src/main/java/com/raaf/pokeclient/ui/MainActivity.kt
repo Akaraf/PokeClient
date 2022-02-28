@@ -1,4 +1,4 @@
-package com.raaf.pokeclient
+package com.raaf.pokeclient.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -6,6 +6,7 @@ import androidx.appcompat.widget.Toolbar
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupActionBarWithNavController
+import com.raaf.pokeclient.R
 import com.raaf.pokeclient.utils.removeViews
 
 class MainActivity : AppCompatActivity() {

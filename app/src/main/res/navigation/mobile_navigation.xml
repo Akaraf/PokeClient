@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/menuFragment"
-        android:name="com.raaf.pokeclient.MenuFragment"
+        android:name="com.raaf.pokeclient.ui.MenuFragment"
         android:label="" >
         <action
             android:id="@+id/action_menuFragment_to_searchFragment"
@@ -14,13 +14,20 @@
         <action
             android:id="@+id/action_menuFragment_to_randomPokemonFragment"
             app:destination="@id/randomPokemonFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_favoriteFragment"
+            app:destination="@id/favoriteFragment" />
     </fragment>
     <fragment
         android:id="@+id/searchFragment"
-        android:name="com.raaf.pokeclient.SearchFragment"
+        android:name="com.raaf.pokeclient.ui.SearchFragment"
         android:label="" />
     <fragment
         android:id="@+id/randomPokemonFragment"
-        android:name="com.raaf.pokeclient.RandomPokemonFragment"
+        android:name="com.raaf.pokeclient.ui.RandomPokemonFragment"
+        android:label="" />
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.raaf.pokeclient.ui.FavoritesFragment"
         android:label="" />
 </navigation>

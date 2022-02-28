@@ -47,22 +47,6 @@ class RandomPokemonViewModel @AssistedInject constructor(
         savedStateHandle.set(RANDOM_ID_STATE, pokemon?.id)
     }
 
-    fun addToFavorite(pokemon: Pokemon) {
-        Completable.fromAction {
-            favoriteDB.favoritePokemonDao().insert(pokemon)
-        }
-            .subscribeOn(Schedulers.io())
-            .subscribe({}, { onFailure(it) })
-    }
-
-    fun removeFromFavorite(pokemon: Pokemon) {
-        Completable.fromAction {
-            favoriteDB.favoritePokemonDao().delete(pokemon)
-        }
-            .subscribeOn(Schedulers.io())
-            .subscribe({}, { onFailure(it) })
-    }
-
     fun getObservableRandomPokemon() : Subject<Pokemon?> {
         return randomPokemonProvider.currentRandomPokemonFlowable
     }

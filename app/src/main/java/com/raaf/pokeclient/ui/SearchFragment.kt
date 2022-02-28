@@ -1,4 +1,4 @@
-package com.raaf.pokeclient
+package com.raaf.pokeclient.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,9 +10,13 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
+import com.raaf.pokeclient.App
+import com.raaf.pokeclient.R
 import com.raaf.pokeclient.data.dataModels.Pokemon
-import com.raaf.pokeclient.extensions.hideKeyboard
-import com.raaf.pokeclient.extensions.lazyViewModel
+import com.raaf.pokeclient.data.databases.extensions.addToFavorite
+import com.raaf.pokeclient.data.databases.extensions.removeFromFavorite
+import com.raaf.pokeclient.ui.extensions.hideKeyboard
+import com.raaf.pokeclient.ui.extensions.lazyViewModel
 import com.raaf.pokeclient.utils.*
 import com.raaf.pokeclient.viewModels.SearchViewModel
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
@@ -102,8 +106,8 @@ class SearchFragment : Fragment(), View.OnClickListener {
                 makeActionSearch()
             }
             favoriteTV -> {
-                if (isPokemonInFavorite) pokemon?.let { searchVM.removeFromFavorite(it) }
-                else pokemon?.let { searchVM.addToFavorite(it) }
+                if (isPokemonInFavorite) pokemon?.let { searchVM.dao.removeFromFavorite(it) }
+                else pokemon?.let { searchVM.dao.addToFavorite(it) }
                 isPokemonInFavorite = !isPokemonInFavorite
             }
         }
